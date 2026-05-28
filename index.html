@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zann's | PORTOFOLIO</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        base: '#000000', surface: 'rgba(10, 10, 10, 0.6)', 
+                        borderline: 'rgba(255, 255, 255, 0.08)', muted: '#a1a1aa'
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <div id="cursor-container">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline">
+            <span class="cursor-text-inner text-[8px] font-extrabold uppercase tracking-widest text-white opacity-0 transition-opacity duration-300 pointer-events-none">PLAY</span>
+        </div>
+    </div>
+
+    <div id="vanta-bg"></div>
+    <div class="noise"></div>
+
+    <nav class="p-6 md:px-10 md:py-8 flex justify-between items-center max-w-[1400px] mx-auto w-full reveal relative z-10">
+        <div class="font-bold text-lg md:text-xl tracking-tight flex items-center gap-1">
+            Zann's<span class="text-muted font-normal">PORTOFOLIO.</span>
+        </div>
+        
+        <div class="flex items-center gap-2 md:gap-4">
+            <div class="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full border border-borderline bg-surface text-[10px] md:text-xs text-muted">
+                <i class="ph-fill ph-globe-hemisphere-west text-gray-400 hidden sm:block"></i>
+                <span class="hidden sm:block">ID, Bandung</span>
+                <span class="w-1 h-1 rounded-full bg-gray-500 mx-1 hidden sm:block"></span>
+                <i class="ph-bold ph-clock text-gray-400 sm:hidden"></i>
+                <span id="live-time" class="font-mono tracking-wider text-gray-300">00:00 WIB</span>
+            </div>
+            <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-borderline bg-surface text-xs text-muted">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Available for work
+            </div>
+            <div class="hidden md:block tilt-content">
+                <a href="mailto:emailanda@gmail.com" class="flex items-center gap-2 px-5 py-2 rounded-full border border-borderline hover:bg-white transition-colors duration-500 group">
+                    <span class="text-sm font-medium text-muted group-hover:text-black transition-colors duration-500">Contact</span>
+                    <div class="relative overflow-hidden w-4 h-4 flex items-center justify-center">
+                        <i class="ph-light ph-arrow-up-right text-sm text-muted group-hover:text-black absolute transition-transform duration-300 ease-out group-hover:translate-x-5 group-hover:-translate-y-5"></i>
+                        <i class="ph-light ph-arrow-up-right text-sm text-muted group-hover:text-black absolute -translate-x-5 translate-y-5 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1400px] mx-auto px-4 md:px-10 pb-24 pt-4 md:pt-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[auto] gap-6 md:gap-8">
+
+            <!-- Kotak 1: Hero Text -->
+            <div class="reveal md:col-span-2 md:row-span-2">
+                <div class="tilt-card h-full w-full bg-surface border border-borderline rounded-3xl p-8 md:p-12 flex flex-col justify-end min-h-[350px] md:min-h-[500px]">
+                    <div class="tilt-content">
+                        <p class="text-muted font-medium mb-4 md:mb-6 text-xs md:text-sm uppercase tracking-widest">Video Editor & Front-end Dev</p>
+                        <div class="relative w-full h-[150px] sm:h-[180px] md:h-[200px] lg:h-[240px] mb-4 md:mb-6 tilt-content-high">
+                            <h1 class="absolute top-0 left-0 w-full text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tighter text-white">
+                                <span id="typed-text"></span>
+                            </h1>
+                        </div>
+                        <p class="text-muted text-sm md:text-lg max-w-md font-light leading-relaxed">
+                            Tidak hanya menulis kode atau menyambung video. Saya berfokus pada detail, estetika, dan cerita di setiap karyanya.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak 2: Foto Estetik -->
+            <div class="reveal md:col-span-1 md:row-span-1">
+                <div class="tilt-card h-full w-full bg-surface border border-borderline rounded-3xl overflow-hidden relative aspect-square md:aspect-auto min-h-[250px]">
+                    <img src="file/WhatsApp Image 2026-05-26 at 13.00.04.jpeg" alt="Vibe" class="w-full h-full object-cover grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+
+            <!-- Kotak 3: Pendekatan Kerja -->
+            <div class="reveal md:col-span-1 md:row-span-1">
+                <div class="tilt-card h-full w-full bg-surface border border-borderline rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[200px] relative overflow-hidden group">
+                    <i class="ph-light ph-planet text-3xl text-muted mb-4 tilt-content-high"></i>
+                    <div class="tilt-content mt-auto relative z-10">
+                        <h3 class="text-lg md:text-xl font-medium tracking-tight mb-2 text-white">Simplicity.</h3>
+                        <p class="text-muted text-xs md:text-sm font-light leading-relaxed">
+                            Saya percaya bahwa desain terbaik adalah desain yang tidak terlihat. Fokus pada fungsi tanpa mengorbankan bentuk.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak 4: Keahlian Web Dev -->
+            <div class="reveal md:col-span-1 md:row-span-1">
+                <div class="tilt-card h-full w-full bg-surface border border-borderline rounded-3xl p-6 md:p-8 flex flex-col justify-between group min-h-[200px]">
+                    <div class="w-10 h-10 rounded-full border border-borderline bg-black/50 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-black transition-colors duration-500 tilt-content-high">
+                        <i class="ph-light ph-code text-lg"></i>
+                    </div>
+                    <div class="tilt-content">
+                        <h3 class="text-base md:text-lg font-medium mb-1 text-white">Web Development</h3>
+                        <p class="text-muted text-xs md:text-sm font-light">HTML, CSS, JS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak 5: Keahlian Video -->
+            <div class="reveal md:col-span-1 md:row-span-1">
+                <div class="tilt-card h-full w-full bg-surface border border-borderline rounded-3xl p-6 md:p-8 flex flex-col justify-between group min-h-[200px]">
+                    <div class="w-10 h-10 rounded-full border border-borderline bg-black/50 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-black transition-colors duration-500 tilt-content-high">
+                        <i class="ph-light ph-film-strip text-lg"></i>
+                    </div>
+                    <div class="tilt-content">
+                        <h3 class="text-base md:text-lg font-medium mb-1 text-white">Video Editing</h3>
+                        <p class="text-muted text-xs md:text-sm font-light">Capcut Dekstop & Mobile, Alight Motion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak 6: Project 1 -->
+            <div class="reveal md:col-span-2 md:row-span-2">
+                <a href="https://zannwasfound-sys.github.io/papandayansaranafood/" target="_blank" rel="noopener noreferrer" class="project-card tilt-card h-full w-full bg-surface border border-borderline rounded-3xl overflow-hidden group relative min-h-[300px] md:min-h-[350px] block">
+                    <img src="file/Screenshot 2026-05-28 084750.png" alt="Web Project"
+                        class="project-img absolute inset-0 w-full h-full object-cover
+                               grayscale opacity-20
+                               group-hover:grayscale-0 group-hover:opacity-60 group-hover:scale-105
+                               transition-all duration-700 ease-in-out">
+                    <div class="absolute inset-0 p-6 md:p-10 flex flex-col justify-between bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none">
+                        <div class="self-end px-4 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-xs font-light text-white tilt-content">2025</div>
+                        <div class="tilt-content">
+                            <p class="text-gray-400 text-xs md:text-sm mb-2 font-light">Web Development</p>
+                            <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-white">Company Profile berbasis Digital Catalog untuk usaha catering</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Kotak 7: Project 2 (Video) -->
+            <!--
+                PERUBAHAN: Thumbnail mulai grayscale + opacity rendah.
+                Desktop hover: thumbnail jadi warna → lalu fade ke video.
+                Mobile: tap toggle video play.
+            -->
+            <div class="reveal md:col-span-2 md:row-span-2">
+                <div id="video-card" class="project-card tilt-card h-full w-full bg-surface border border-borderline rounded-3xl overflow-hidden group relative min-h-[300px] md:min-h-[350px]">
+                    <img id="video-thumb" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000&auto=format&fit=crop"
+                        alt="Video Project Thumbnail"
+                        class="project-img absolute inset-0 w-full h-full object-cover
+                               grayscale opacity-20
+                               group-hover:grayscale-0 group-hover:opacity-50
+                               md:group-hover:opacity-0
+                               transition-all duration-700 ease-in-out z-10">
+                    <video id="project-video" src="file/1000107891.mp4" muted loop playsinline
+                        class="absolute inset-0 w-full h-full object-cover opacity-0 md:group-hover:opacity-60 transition-opacity duration-700 z-0"></video>
+                    <div id="video-icon"
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                               w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/20
+                               bg-black/40 backdrop-blur-md flex items-center justify-center
+                               md:group-hover:opacity-0 transition-opacity duration-500
+                               tilt-content-high z-20">
+                        <i class="ph-fill ph-play text-xl ml-1"></i>
+                    </div>
+                    <div class="absolute inset-0 p-6 md:p-10 flex flex-col justify-between bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-20">
+                        <div class="self-end px-4 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-xs font-light text-white tilt-content">Short Video</div>
+                        <div class="tilt-content">
+                            <p class="text-gray-400 text-xs md:text-sm mb-2 font-light">Video Editing</p>
+                            <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-white">Nature Cinematic</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak 8: Sosial Media & Kontak -->
+            <div class="reveal md:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-2">
+                <a href="https://instagram.com/zwithan" target="_blank" class="tilt-card bg-surface border border-borderline rounded-full p-5 md:p-6 flex justify-between items-center hover:bg-white hover:text-black transition-colors duration-500 group">
+                    <div class="flex items-center gap-3 pointer-events-none">
+                        <i class="ph-light ph-instagram-logo text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
+                        <span class="font-medium text-xs md:text-sm tracking-widest uppercase text-white group-hover:text-black">Instagram</span>
+                    </div>
+                    <div class="relative overflow-hidden w-6 h-6 flex items-center justify-center pointer-events-none">
+                        <i class="ph-light ph-arrow-up-right text-lg md:text-xl text-white group-hover:text-black absolute transition-transform duration-300 ease-out group-hover:translate-x-6 group-hover:-translate-y-6"></i>
+                        <i class="ph-light ph-arrow-up-right text-lg md:text-xl text-white group-hover:text-black absolute -translate-x-6 translate-y-6 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></i>
+                    </div>
+                </a>
+                <a href="https://wa.me/6281285750725" target="_blank" class="tilt-card bg-surface border border-borderline rounded-full p-5 md:p-6 flex justify-between items-center hover:bg-white hover:text-black transition-colors duration-500 group">
+                    <div class="flex items-center gap-3 pointer-events-none">
+                        <i class="ph-light ph-whatsapp-logo text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
+                        <span class="font-medium text-xs md:text-sm tracking-widest uppercase text-white group-hover:text-black">WhatsApp</span>
+                    </div>
+                    <div class="relative overflow-hidden w-6 h-6 flex items-center justify-center pointer-events-none">
+                        <i class="ph-light ph-arrow-up-right text-lg md:text-xl text-white group-hover:text-black absolute transition-transform duration-300 ease-out group-hover:translate-x-6 group-hover:-translate-y-6"></i>
+                        <i class="ph-light ph-arrow-up-right text-lg md:text-xl text-white group-hover:text-black absolute -translate-x-6 translate-y-6 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></i>
+                    </div>
+                </a>
+                <a href="mailto:andimuhfauzanalazhar@anda.com" class="tilt-card bg-surface border border-borderline rounded-full p-5 md:p-6 flex justify-between items-center hover:bg-white hover:text-black transition-colors duration-500 group">
+                    <div class="flex items-center gap-3 pointer-events-none">
+                        <i class="ph-light ph-envelope-simple text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
+                        <span class="font-medium text-xs md:text-sm tracking-widest uppercase text-white group-hover:text-black">Mulai Proyek</span>
+                    </div>
+                    <div class="relative overflow-hidden w-6 h-6 flex items-center justify-center pointer-events-none">
+                        <i class="ph-light ph-paper-plane-tilt text-lg md:text-xl text-white group-hover:text-black absolute transition-transform duration-300 ease-out group-hover:translate-x-6 group-hover:-translate-y-6"></i>
+                        <i class="ph-light ph-paper-plane-tilt text-lg md:text-xl text-white group-hover:text-black absolute -translate-x-6 translate-y-6 transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></i>
+                    </div>
+                </a>
+            </div>
+
+        </div> 
+    </main>
+
+    <footer class="text-center py-12 text-muted text-[10px] md:text-xs font-light tracking-widest uppercase reveal relative z-10">
+        <p>&copy; 2026 Zann's. Crafted with Coffee and assisted by AI.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
